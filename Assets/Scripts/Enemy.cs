@@ -74,12 +74,7 @@ public class Enemy : MonoBehaviour
         _canFire += 1000f;
         if (other.tag == "Player")
         {
-
-            Player player = other.transform.GetComponent<Player>();
-            if (player != null)
-            {
-                player.Damage();
-            }
+           _player.Damage();
             _animator.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _speed = 0;
