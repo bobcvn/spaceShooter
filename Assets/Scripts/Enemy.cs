@@ -79,7 +79,6 @@ public class Enemy : MonoBehaviour
             {
                 player.Damage();
             }
-            //trigger anim
             _animator.SetTrigger("OnEnemyDeath");
             _audioSource.Play();
             _speed = 0;
@@ -91,7 +90,7 @@ public class Enemy : MonoBehaviour
             {
                 _player.AddScore(10);
             }
-            // play anim
+
             Destroy(other.gameObject);
             _animator.SetTrigger("OnEnemyDeath");
             _speed = 0.5f;
