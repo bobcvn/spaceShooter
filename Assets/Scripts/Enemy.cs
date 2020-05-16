@@ -70,7 +70,8 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-
+        // to avoid shoot after enemy's death
+        _canFire += 1000f;
         if (other.tag == "Player")
         {
 
