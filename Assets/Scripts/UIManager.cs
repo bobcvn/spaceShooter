@@ -45,14 +45,14 @@ public void UpdateScore(int playerScore)
 
     public void UpdateLives(int currentLives)
     {
-        _LivesImg.sprite = _liveSprites[currentLives];
         if (currentLives < 1)
         {
             _gameManager.GameOver();
             StartCoroutine(GameOverFlicker());
             _restartText.gameObject.SetActive(true);
         }
-
+        // here to avoid issue when currentLives < 0
+        _LivesImg.sprite = _liveSprites[currentLives];
     }
     IEnumerator GameOverFlicker()
     {
