@@ -25,10 +25,9 @@ public class UIManager : MonoBehaviour
 
     private GameManager _gameManager;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        // assign text component to the jhandle
         _scoreText.text = "Score: " + 0;
         _gameOverText.gameObject.SetActive(false);
         _restartText.gameObject.SetActive(false);
@@ -39,11 +38,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 public void UpdateScore(int playerScore)
     {
         _scoreText.text = "Score: " + playerScore.ToString();
@@ -51,8 +45,6 @@ public void UpdateScore(int playerScore)
 
     public void UpdateLives(int currentLives)
     {
-        // dislay img sprites ased on lives index
-
         _LivesImg.sprite = _liveSprites[currentLives];
         if (currentLives < 1)
         {

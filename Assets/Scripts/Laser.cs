@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // speed laser  8
+
     [SerializeField]
     private float _speed = 8.0f;
     private bool _isEnemyLaser = false;
-    // Update is called once per frame
     void Update()
     {
         if (_isEnemyLaser == false)
@@ -27,7 +25,6 @@ public class Laser : MonoBehaviour
         _speed = speed;
     }
 
-    //  translate laser up 
     private void MoveUp()
     {
         transform.Translate(Vector3.up * _speed * Time.deltaTime);

@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private float _speed = 4f;
-    // Start is called before the first frame update
+
     private Player _player;
     private Animator _animator ;
     private AudioSource _audioSource;
+
     [SerializeField]
     private GameObject _laserPrefab;
+
     private float _fireRate = 3.0f;
     private float _canFire = -1f;
 
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         CalculateMovement();
@@ -55,12 +57,12 @@ public class Enemy : MonoBehaviour
 
     void CalculateMovement()
     {
-        // down 4 m/s
-        // respawn at top with random x pos
+        // down at _speed m/s
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
-        //tra,Vector3.down * _speed * Time.deltaTime;
+
         if (transform.position.y < -5f)
         {
+            // respawn at top with random x pos
             float RandomX = Random.Range(-8f, 8f);
             transform.position = new Vector3(RandomX, 7, 0);
         }

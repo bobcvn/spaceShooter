@@ -27,7 +27,7 @@ public class Powerup : MonoBehaviour
             if (player != null)
             {
                 player.audioSource.Play();
-                // communicate with the player script
+
                 switch (powerupID)
                 {
                     case 0:
