@@ -43,6 +43,10 @@ public class Player : MonoBehaviour
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         audioSource = GetComponent<AudioSource>();
+        if (_uiManager == null)
+        {
+            Debug.Log("UI manager is null");
+        }
         if (audioSource == null)
         {
             Debug.Log("Audio source on the player is null");

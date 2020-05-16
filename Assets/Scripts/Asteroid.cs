@@ -16,6 +16,10 @@ public class Asteroid : MonoBehaviour
     void Start()
     {
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+        if (_spawnManager == null)
+        {
+            Debug.Log("spawn manager is null");
+        }
     }
     void Update()
     {
